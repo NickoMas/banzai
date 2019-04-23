@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+    <title>Banzai</title>
+</head>
+
+<body>
+    <header class="head-wrapper">
+        <nav class="head-nav-wrapper">
+            <!-- <input type="checkbox" id="menu-toggle" hidden> -->
+            <div class="head-nav-brand head-nav-blocks">
+                <a class="head-nav-brand-link" href="#main">
+                    <img src="./banzai_logo_min.jpg" alt="banzai_logo" height="65">
+                    <span class="head-nav-brand-link__name">Banzai</span>
+                </a>
+            </div>
+            <div class="head-nav-menu head-nav-blocks">
+                <ul class="nav-items">
+                    <li class="nav-item-main">
+                        <a class="nav-item-link" href="#main" data-status="active">Главная</a>
+                    </li>
+                    <li class="nav-item-about">
+                        <a class="nav-item-link" href="#about">О нас</a>
+                    </li>
+                    <li class="nav-item-contacts">
+                        <a class="nav-item-link" href="#contacts">Контакты</a>
+                    </li>
+                    <li class="nav-item-coaches">
+                        <a class="nav-item-link" href="#coaches">Тренеры</a>
+                    </li>
+                </ul>
+                <div class="head-nav-mobile-menu">
+                    <input type="checkbox" id="head-nav-mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <ul id="mobile-menu">
+                        <li class="nav-item-main">
+                            <a class="nav-item-link" href="#main" data-status="active">Главная</a>
+                        </li>
+                        <li class="nav-item-about">
+                            <a class="nav-item-link" href="#about">О нас</a>
+                        </li>
+                        <li class="nav-item-contacts">
+                            <a class="nav-item-link" href="#contacts">Контакты</a>
+                        </li>
+                        <li class="nav-item-coaches">
+                            <a class="nav-item-link" href="#coaches">Тренеры</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- <label for="menu-toggle" class="label-toggle"></label> -->
+        </nav>
+        <!-- <div class="head-nav-pseudo-wrapper"></div> -->
+    </header>
+    <main class="main-wrapper">
+        <section class="content-block content-main bg-video-wrapper active-block" id="main">
+            <video src="./promo.mp4" preload="auto" autoplay="autoplay" loop="loop" muted="muted"></video>
+            <img class="content-main__logo" src="./banzai_club_logo.jpg" title="banzai club logo">
+        </section>
+
+        <section class="content-block content-about" id="about">
+            <article class="content-about__overlay">
+                <h1 class="content-about__header">
+                    Приветствуем вас, уважаемые друзья!
+                </h1>
+                <p>
+                    Если вы здесь, значит вам интересны мы и то, чем мы занимаемся! В этой теме вы найдете где, когда и под началом какого тренера-преподавателя вы начнете свои тренировки!
+                </p>
+                <p>
+                    "Есть правила, но нет компромиссов"© - наш девиз в спорте и в жизни! Будь беспощаден, но не поступайся честью! Великодушие и твердость! Рады, что вы с нами!
+                </p>
+            </article>
+        </section>
+        <section class="content-block content-contacts" id="contacts">
+            <article class="">
+                <p>
+                    &#9742; +375 (29) 641-48-70
+                </p>
+                <p>
+                    &#128681; улица Уборевича, 74, Минск
+                </p>
+                <p>
+                    &#128340; 9:00 - 21:00
+                </p>
+            </article>
+        </section>
+        <section class="content-block content-coaches" id="coaches">
+            <article class="content-coaches__wrapper">
+                <figure class="content-coaches__coach content-coaches__kir">
+                    <img class="content-block__avatar" src="./coaches_kir.jpg" alt="Раханский Кирилл Степанович">
+                    <figcaption class="content-coaches__text">
+                        Раханский Кирилл Степанович
+                    </figcaption>    
+                </figure>
+                <figure class="content-coaches__coach content-coaches__eug">
+                    <img class="content-block__avatar" src="./coaches_eug.jpg" alt="Омельянчук Евгений Александрович">
+                    <figcaption class="content-coaches__text">
+                        Омельянчук Евгений Александрович
+                    </figcaption>
+                </figure>
+            </article>        
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>
