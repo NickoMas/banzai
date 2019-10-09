@@ -15,6 +15,7 @@
   "author": "nickomas",
   "license": "ISC",
   "dependencies": {
+    "@babel/polyfill": "^7.6.0",
     "connect-history-api-fallback": "^1.6.0",
     "express": "^4.17.1",
     "typescript": "^3.6.3",
