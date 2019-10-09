@@ -1,5 +1,6 @@
 <template>
     <section class="content-block content-contacts" id="contacts">
+        <h2 class="content-header">Contacts</h2>
         <article class="">
             <p>
                 &#9742; +375 (29) 641-48-70
@@ -13,3 +14,8 @@
         </article>
     </section>
 </template>
+<style>
+    .content-contacts {
+        justify-content: center;
+    }
+</style>

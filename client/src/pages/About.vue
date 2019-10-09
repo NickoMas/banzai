@@ -1,5 +1,6 @@
 <template>
     <section class="content-block content-about" id="about">
+        <h2 class="content-header">About</h2>
         <article class="content-about__overlay">
             <h1 class="content-about__header">
                 <!-- Приветствуем вас, уважаемые друзья! -->
@@ -16,3 +17,17 @@
         </article>
     </section>
 </template>
+
+<script>
+export default {
+    components: {
+    
+    }
+}
+</script>
+<style>
+    .content-about__header {
+        text-align: center;
+    }
+
+</style>

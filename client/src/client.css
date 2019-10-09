@@ -1,3 +1,54 @@
+/** RESET **/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 /****/
 /* STYLES to reuse */
 /*
@@ -23,13 +74,17 @@
 */
 /***/
 
-:root {
-    /* --main-bg-color: black;
-    --main-mobile-bg-color: #141212; */
+/** MOBILE STYLES */
+
+.borderpl { 
+    border: 1px solid;
 }
 
-html {
-    height: 100%;
+:root {
+    font-size: 16px;
+    --main-bg-color: black;
+    --main-mobile-bg-color: #141212;
+    --hero-header-height: 80px;
 }
 
 body {
@@ -37,79 +92,6 @@ body {
     font-family: 'Play', sans-serif; */
     font-size: 16px;
     /* color: #fff; */
-}
-
-body, figure {
-    /* background: black; */
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-* {
-    /* border: 1px solid #000; */
-    box-sizing: border-box;
-}
-
-.head-wrapper {
-    width: 100%;
-    position: fixed;
-    z-index: 10;
-}
-
-.head-nav-wrapper {
-    transition: all .5s;
-    /* width: 100%; */
-    /* background: #fff; */
-    display: flex;
-    /* min-height: 65px; */
-    /* justify-content: space-around;
-    align-items: center; */
-}
-
-.head-nav-brand {
-    /* display: inline-block;
-    width: 60%; */
-    /* height: 100%; */
-    /* text-align: center; */
-    /* vertical-align: middle; */
-    /* background: url(./banzai_logo_min.jpg) no-repeat; */
-    /* background-size: contain;
-    background-position: center; */
-}
-
-.head-nav-menu {
-    /* width: 60%;
-    text-align: center;
-    display: flex;
-    justify-content: flex-end; */
-}
-
-.head-nav-blocks {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 100%;
-}
-
-
-
-/* .head-nav-wrapper:hover {
-    background: var(--main-mobile-bg-color);
-} */
-
-.nav-items {
-    padding: 0;
-    display: none;
-    list-style-type: none;
-}
-
-.nav-items li {
-    cursor: pointer;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 2.3vw;
 }
 
 .fullscreen-bg {
@@ -136,181 +118,31 @@ body, figure {
 	        transform: translate(-50%, -50%);
 }
 
-main {
-    position: relative;
-    height: 100%;
-    /* background: var(--main-bg-color); */
-}
-
-aside {
-    /* background-image: url(./banzai_logo.png); */
-    position: fixed;
-    width: 40%;
-    height: 100%;
-    display: flex;
-    background: var(--main-bg-color);
-}
-
-/* .content-about {
-    position: absolute;
-    right: 0;
-} */
-
-.content-coaches {
-    padding: 0 40px;
-    justify-content: flex-start;
-}
-
-a.scrollable[data-status] {
-    background: blue;
-}
-
-.content-block__avatar {
-    height: auto;
-    width: 100%;
-    max-width: 80px;
-    box-shadow: 0 0 7px 0px red;
-    position: relative;
-    border-radius: 50%;
-}
-
-.content-block__avatar--kir {
-    /* background: url('./coaches_kir.jpg') no-repeat -343px -29px; */
-}
-
-.content-block__avatar--eug {
-    /* background: url('./coaches.jpg') no-repeat -173px -19px; */
-}
-
-.bg-video-wrapper, .bg-video-wrapper > video {
-    width: 100%
-}
-
-.head-nav-brand-link__name {
-    padding-left: 15px;
-    font-size: 2rem;
-}
-
-.content-about__header {
-    text-align: center;
-}
-
-.content-coaches__wrapper {
-    padding: 100px 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-flow: column;
-    justify-content: space-evenly;
-}
-
-.content-coaches__text {
-    padding-left: 10px;
-    padding-top: 10px;
-    text-align: center;
-}
-
-.content-coaches__coach {
-    display: flex;
-    align-items: center;
-    flex-flow: column;
-    justify-content: center;
-    height: auto;
-    background-color: transparent;
-}
-
 .content-block:not(.content-main) {
     padding: 0 30px;
+}
+
+.content-header {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    font-weight: 500;
 }
 
 video {
     display: none;
 }
 
-.head-nav-mobile-menu {
-    display: flex;
-    flex-direction: column;
-    top: 5px;
-    right: 20px;
-    z-index: 1;
-    -webkit-user-select: none;
-    user-select: none;
-}
-
-.head-nav-mobile-menu input {
-    display: flex;
-    width: 40px;
-    height: 32px;
-    position: absolute;
-    cursor: pointer;
-    opacity: 0;
-    z-index: 2;
-}
-
-.head-nav-mobile-menu span
-{
-    display: flex;
-    width: 29px;
-    height: 2px;
-    margin-bottom: 5px;
-    position: relative;
-    background: #ffffff;
-    border-radius: 3px;
-    z-index: 1;
-    transform-origin: 5px 0px;
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                opacity 0.55s ease;
-}
-
-.head-nav-mobile-menu span:first-child
-{
-  transform-origin: 0% 0%;
-}
-
-.head-nav-mobile-menu span:nth-last-child(2)
-{
-  transform-origin: 0% 100%;
-}
-
-.head-nav-mobile-menu input:checked ~ span
-{
-  opacity: 1;
-  transform: rotate(45deg) translate(-3px, -1px);
-  background: #36383F;
-}
-.head-nav-mobile-menu input:checked ~ span:nth-last-child(3)
-{
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-.head-nav-mobile-menu input:checked ~ span:nth-last-child(2)
-{
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-.content-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.content-main__logo {
-    height: auto;
-    max-height: 90%;
-    padding: 30px;
-}
-
-.content-contacts {
-    justify-content: center;
-}
-
 .nav-item-link {
     color: red;
 }
 
+/** DESKTOP STYLES */
+
 @media screen and (min-width: 768px) {
+
+    :root {
+        --hero-header-height: 200px;
+    }
 
     body {
         font-size: 32px;
@@ -319,6 +151,7 @@ video {
     .head-nav-brand {
         /* width: 40%; */
     }
+
     .content-main__logo {
         display: none;
     }
@@ -333,6 +166,27 @@ video {
 
     video {
         display: block;
+    }
+
+    .head-wrapper {
+        height: 100px;
+    }
+
+    .heroHeader {
+        height: var(--hero-header-height);
+    }
+
+    .main-wrapper {
+        height: calc(100% - 100px);
+    }
+
+    .heroHeader ~ .main-wrapper {
+        height: calc(100% - var(--hero-header-height));
+    }
+
+    .head-wrapper:not(.heroHeader) .head-nav-wrapper {
+        grid-template:
+            "logo menu contacts" 100px / .5fr 1fr 1fr;
     }
 
     .content-block:not(.content-main) {
@@ -355,10 +209,26 @@ video {
     .content-block {
         background-color: var(--main-bg-color);
         justify-content: center;
+        height: 100%;
+    }
+
+    .content-header {
+        display: none;
+    }
+
+    .content-coaches__wrapper {
+        flex-flow: row;
     }
     
     .nav-items {
         display: inline-flex;
+    }
+
+    .head-nav-wrapper {
+        place-items: center;
+        grid-template:
+            "logo logo logo" 1fr
+            "menu menu contacts" 1fr / 2fr 1fr;
     }
 
     .head-nav-wrapper:hover {
