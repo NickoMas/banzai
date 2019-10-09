@@ -1,41 +1,75 @@
 <template>
-    <main class="main-wrapper">
-        <!-- <section class="content-block content-main bg-video-wrapper active-block" id="main"> -->
-            <!-- <video src="./promo.mp4" preload="auto" autoplay="autoplay" loop="loop" muted="muted"></video> -->
-            <!-- <img class="content-main__logo" src="./banzai_club_logo.jpg" title="banzai club logo"> -->
-        <!-- </section> -->
-        <!-- <Coaches></Coaches> -->
-        <transition name="banzai" mode="out-in">
-            <router-view></router-view>
-        </transition>
-    </main>
+    <section class="content-block content-hero" id="hero">
+        <agile :options="mainCarousel">
+            <!-- <img class="slide" :src="'./../images/banzai_logo.png'"/> -->
+            <div class="slide metal"></div>
+        </agile>
+        <video></video>
+    </section>
 </template>
 
 <script>
+import { VueAgile } from "vue-agile";
+
 export default {
-    watch: {
-        '$route' (a,b) {
-            console.log('ha', a, b);
-            this.$emit('metal', 3);
-        }
+    data() {
+        return {
+            mainCarousel: {
+                dots: false,
+                autoplay: true,
+                autoplaySpeed: 300,
+                responsive: [
+                    {
+                        breakpoint: 800,
+                        settings: {
+                            dots: true,
+                            unagile: true
+                        }
+                    }
+                ]
+            }
+        } 
+    },
+    components: {
+        agile: VueAgile
     }
 }
 </script>
 
 <style>
-    .main-wrapper {
-        height: calc(100% - 5rem);
-        position: absolute;
-        bottom: 0;
-        width: 100%;
+    .agile {
+        display: block;
+    }
+
+    video {
+        display: none;
     }
 
     .metal {
         width: 600px;
-        height: 100px;
+        height: 100%;
         background-color: slategray;
         border: 1px solid;
     }
+
+    .agile__list { 
+        height: 100%;
+    }
+
+    .agile__track { 
+        height: calc(100vh - 80px - 18px);
+    }
+    
+    @media screen and (min-width: 800px) {
+        .agile {
+            display: none;
+        }
+
+        video {
+            display: block;
+        }
+    }
+
 </style>
 
 

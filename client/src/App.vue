@@ -1,17 +1,17 @@
 <template>
   <div class="banzai-wrapper">
     <Header></Header>
-    <Main></Main>
+    <Content></Content>
   </div>
 </template>
 
 <script>
-  import Header from "./pages/Header.vue";
-  import Main from "./pages/Main.vue";
+  import Header from "./components/Header.vue";
+  import Content from "./pages/Content.vue";
 
   export default {
     components: {
-      Header, Main
+      Header, Content
     }
   }
 </script>
