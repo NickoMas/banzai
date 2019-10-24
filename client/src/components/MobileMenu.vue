@@ -1,37 +1,50 @@
 <template>
     <div class="head-nav-mobile-menu">
-        <input type="checkbox" id="head-nav-mobile-toggle">
+        <input
+            type="checkbox"
+            id="head-nav-mobile-toggle"
+            @change="checkInput"
+            v-bind="{ checked: checkedInput ? true : null }">
         <span></span>
         <span></span>
         <span></span>
         <ul id="mobile-menu">
-            <li class="nav-item-main">
-                <label for="md_main" data-link="hero">
-                    <router-link class="nav-item-link" to="main" v-on:click.native="checkRadio">Main</router-link>
-                    <input hidden type="radio" name="slot" id="md_main" checked>
-                </label>
-            </li>
-            <li class="nav-item-about">
-                <label for="md_about">
-                    <router-link class="nav-item-link" to="about" v-on:click.native="checkRadio">About</router-link>
-                    <input hidden type="radio" name="slot" id="md_about">
-                </label>
-            </li>
-            <li class="nav-item-contacts">
-                <label for="md_contacts">
-                    <router-link class="nav-item-link" to="contacts" v-on:click.native="checkRadio">Contacts</router-link>
-                    <input hidden type="radio" name="slot" id="md_contacts">
-                </label>
-            </li>
-            <li class="nav-item-coaches">
-                <label for="md_сoaches">
-                    <router-link class="nav-item-link" to="сoaches" v-on:click.native="checkRadio">Coaches</router-link>
-                    <input hidden type="radio" name="slot" id="md_сoaches">
-                </label>
+            <li
+                v-for="(value, name, index) in navItems"
+                :key="index"
+                :class="`nav-item-${name}`">
+                <a
+                    class="nav-item-link"
+                    v-scroll-to="{
+                        el: `#${name === 'main' ? 'hero' : name}`,
+                        onDone: checkInput
+                    }"
+                >
+                    {{ value }}
+                </a>
             </li>
         </ul>
     </div>
 </template>
+
+<script>
+    import { navItemsCollection } from "./../helpers/collections";
+    //v-scroll-to="`#${name === 'main' ? 'hero' : name}`"
+    export default {
+        data() {
+            return {
+                navItems: navItemsCollection,
+                checkedInput: false
+            }
+        },
+        methods: {
+            checkInput: function ($event) {
+                console.log('check', this.checkedInput);
+                this.checkedInput = !this.checkedInput;
+            },
+        }
+    }
+</script>
 
 <style>
     .head-nav-mobile-menu {
@@ -44,7 +57,7 @@
         user-select: none;
     }
 
-    .head-nav-mobile-menu input {
+    .head-nav-mobile-menu > input {
         display: flex;
         width: 40px;
         height: 32px;
@@ -52,6 +65,7 @@
         cursor: pointer;
         opacity: 0;
         z-index: 2;
+        top: 0;
     }
 
     .head-nav-mobile-menu span {
@@ -93,7 +107,7 @@
 
     #mobile-menu {
         position: absolute;
-        width: 100%;
+        width: 50vw;
         height: 360px;
         box-shadow: 0 0 10px #85888C;
         margin-top: -70px;

@@ -9,6 +9,8 @@
             <About></About>
             <Contacts></Contacts>
             <Coaches></Coaches>
+            <Calendar></Calendar>
+            <Footer></Footer>
         </section>
         <section class="content-section desktop-content" v-else>
             <transition name="banzai" mode="out-in">
@@ -23,12 +25,14 @@
     import About from '../pages/About.vue';
     import Contacts from '../pages/Contacts.vue';
     import Coaches from '../pages/Coaches.vue';
+    import Calendar from '../pages/Calendar.vue';
+    import Footer from "../components/Footer.vue";
 
     import { breakpoints } from '../helpers/constants';
 
     export default {
         components: {
-            Main, About, Contacts, Coaches
+            Main, About, Contacts, Coaches, Calendar, Footer
         },
         // created() {
         //     console.log('mobile', this.isMobile)
@@ -54,9 +58,11 @@
         /* background: var(--main-bg-color); */
     }
     .main-wrapper {
-        height: calc(100% - var(--hero-header-height));
+        /* height: calc(100% - var(--hero-header-height)); */
+        height: auto;
+        top: 80px;
         position: absolute;
-        bottom: 0;
+        /* bottom: 0; */
         width: 100%;
     }
     .content-section {

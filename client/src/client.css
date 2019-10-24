@@ -118,6 +118,10 @@ body {
 	        transform: translate(-50%, -50%);
 }
 
+.content-block {
+    height: calc(100% - var(--hero-header-height));
+}
+
 .content-block:not(.content-main) {
     padding: 0 30px;
 }
@@ -132,8 +136,28 @@ video {
     display: none;
 }
 
+.nav-item-label {
+    position: relative;
+}
+
 .nav-item-link {
+    border: 1px solid;
     color: red;
+    display: inline-block;
+    width: 50%;
+    height: 20px;
+    /* z-index: 1; */
+}
+
+/* .nav-item-link + input { */
+.nav-item-label input {
+    border: 1px solid;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* opacity: 1; */
+    top: 0;
 }
 
 /** DESKTOP STYLES */
@@ -178,6 +202,8 @@ video {
 
     .main-wrapper {
         height: calc(100% - 100px);
+        bottom: 0;
+        top: unset;
     }
 
     .heroHeader ~ .main-wrapper {

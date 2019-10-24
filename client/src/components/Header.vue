@@ -13,10 +13,10 @@
                     <li
                         v-for="(value, name, index) in navItems"
                         :key="index"
-                        :class="'nav-item-'+name">
+                        :class="`nav-item-${name}`">
                         <!-- <a class="nav-item-link" href="#main" data-status="active">label1</a> -->
                         <label
-                            :for="'lg_'+name"
+                            :for="`lg_${name}`"
                             v-bind="{ 'data-link': index === 0 ? 'main' : null }">
                             <router-link
                                 class="nav-item-link"
@@ -28,7 +28,7 @@
                                 hidden
                                 type="radio"
                                 name="slot"
-                                :id="'lg_'+name"
+                                :id="`lg_${name}`"
                                 v-bind="{ 'checked': index === 0 ? 'checked' : null }">
                         </label>                        
                     </li>
@@ -128,6 +128,7 @@
         grid-row: 1;
         grid-area: menu;
         justify-self: center;
+        position: relative;
     }
 
     .head-nav-contacts {
