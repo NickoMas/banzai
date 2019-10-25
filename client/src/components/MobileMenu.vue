@@ -1,5 +1,5 @@
 <template>
-    <div class="head-nav-mobile-menu">
+    <div class="head-nav-menu__mobile">
         <input
             type="checkbox"
             id="head-nav-mobile-toggle"
@@ -11,8 +11,7 @@
         <ul id="mobile-menu">
             <li
                 v-for="(value, name, index) in navItems"
-                :key="index"
-                :class="`nav-item-${name}`">
+                :key="index">
                 <a
                     class="nav-item-link"
                     v-scroll-to="{
@@ -29,7 +28,6 @@
 
 <script>
     import { navItemsCollection } from "./../helpers/collections";
-    //v-scroll-to="`#${name === 'main' ? 'hero' : name}`"
     export default {
         data() {
             return {
@@ -47,7 +45,7 @@
 </script>
 
 <style>
-    .head-nav-mobile-menu {
+    .head-nav-menu__mobile {
         display: flex;
         flex-direction: column;
         top: 5px;
@@ -57,7 +55,7 @@
         user-select: none;
     }
 
-    .head-nav-mobile-menu > input {
+    .head-nav-menu__mobile > input {
         display: flex;
         width: 40px;
         height: 32px;
@@ -68,7 +66,7 @@
         top: 0;
     }
 
-    .head-nav-mobile-menu span {
+    .head-nav-menu__mobile span {
         display: flex;
         width: 29px;
         height: 2px;
@@ -83,25 +81,25 @@
                     opacity 0.55s ease;
     }
 
-    .head-nav-mobile-menu span:first-child {
+    .head-nav-menu__mobile span:first-child {
         transform-origin: 0% 0%;
     }
 
-    .head-nav-mobile-menu span:nth-last-child(2) {
+    .head-nav-menu__mobile span:nth-last-child(2) {
         transform-origin: 0% 100%;
     }
 
-    .head-nav-mobile-menu input:checked ~ span {
+    .head-nav-menu__mobile input:checked ~ span {
         opacity: 1;
         transform: rotate(45deg) translate(-3px, -1px);
         background: #36383F;
     }
-    .head-nav-mobile-menu input:checked ~ span:nth-last-child(3) {
+    .head-nav-menu__mobile input:checked ~ span:nth-last-child(3) {
         opacity: 0;
         transform: rotate(0deg) scale(0.2, 0.2);
     }
 
-    .head-nav-mobile-menu input:checked ~ span:nth-last-child(2) {
+    .head-nav-menu__mobile input:checked ~ span:nth-last-child(2) {
         transform: rotate(-45deg) translate(0, -1px);
     }
 
@@ -112,10 +110,8 @@
         box-shadow: 0 0 10px #85888C;
         margin-top: -70px;
         padding: 100px;
-        /* padding-top: 125px; */
         background-color: #2e2f31;
         -webkit-font-smoothing: antialiased;
-        /* transform-origin: 0% 0%; */
         transform: translate(-45px, -100%);
         transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
         list-style-type: none;
@@ -127,7 +123,7 @@
         transition-delay: 2s;
     }
 
-    .head-nav-mobile-menu input:checked ~ #mobile-menu {
+    .head-nav-menu__mobile input:checked ~ #mobile-menu {
         transform: translate(-45px, 0);
     }
 </style>

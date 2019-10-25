@@ -49,13 +49,14 @@ table {
 	border-spacing: 0;
 }
 
+a:-webkit-any-link {
+    color: unset;
+    text-decoration: unset;
+}
+
 /****/
 /* STYLES to reuse */
 /*
-.nav-item-link, .head-nav-brand-link__name {
-    text-shadow: 0px 0px 10px red;
-}
-
 .nav-item-link[data-status='active'] {
     border-bottom: 1px solid #c72727;
 }
@@ -89,9 +90,9 @@ table {
 
 body {
     /* overflow: hidden;
-    font-family: 'Play', sans-serif; */
-    font-size: 16px;
+    font-size: 16px; */
     /* color: #fff; */
+    font-family: 'Play', sans-serif;
 }
 
 .fullscreen-bg {
@@ -146,6 +147,7 @@ video {
     display: inline-block;
     width: 50%;
     height: 20px;
+    text-shadow: 0px 0px 5px red;
     /* z-index: 1; */
 }
 
@@ -171,11 +173,7 @@ video {
     body {
         font-size: 32px;
     }
-
-    .head-nav-brand {
-        /* width: 40%; */
-    }
-
+    
     .content-main__logo {
         display: none;
     }
@@ -184,7 +182,7 @@ video {
         justify-content: center;
     }
 
-    .head-nav-mobile-menu {
+    .head-nav-menu__mobile {
         display: none;
     }
 
@@ -198,6 +196,10 @@ video {
 
     .heroHeader {
         height: var(--hero-header-height);
+    }
+
+    .heroHeader.head-wrapper {
+        background: transparent;
     }
 
     .main-wrapper {
@@ -246,14 +248,14 @@ video {
         flex-flow: row;
     }
     
-    .nav-items {
+    .head-nav-menu__desktop {
         display: inline-flex;
     }
 
     .head-nav-wrapper {
         place-items: center;
         grid-template:
-            "logo logo logo" 1fr
+            "logo logo contacts" 1fr
             "menu menu contacts" 1fr / 2fr 1fr;
     }
 

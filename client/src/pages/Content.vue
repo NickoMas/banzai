@@ -66,7 +66,7 @@
         width: 100%;
     }
     .content-section {
-        height: 100%;
+        height: auto;
     }
     .content-main {
         display: flex;
