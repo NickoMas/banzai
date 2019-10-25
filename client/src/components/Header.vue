@@ -9,30 +9,7 @@
                 </a>
             </div>
             <div class="head-nav-menu head-nav-blocks">
-                <ul class="nav-items">
-                    <li
-                        v-for="(value, name, index) in navItems"
-                        :key="index"
-                        :class="`nav-item-${name}`">
-                        <!-- <a class="nav-item-link" href="#main" data-status="active">label1</a> -->
-                        <label
-                            :for="`lg_${name}`"
-                            v-bind="{ 'data-link': index === 0 ? 'main' : null }">
-                            <router-link
-                                class="nav-item-link"
-                                :to="name"
-                                @click.native="checkRadio">
-                                {{ value }}
-                            </router-link>
-                            <input
-                                hidden
-                                type="radio"
-                                name="slot"
-                                :id="`lg_${name}`"
-                                v-bind="{ 'checked': index === 0 ? 'checked' : null }">
-                        </label>                        
-                    </li>
-                </ul>
+                <DesktopMenu></DesktopMenu>
                 <MobileMenu></MobileMenu>
             </div>
             <HeaderContacts></HeaderContacts>
@@ -43,24 +20,22 @@
 </template>
 
 <script>
+    import DesktopMenu from "./DesktopMenu.vue";
     import MobileMenu from "./MobileMenu.vue";
     import NavItem from "./NavItem.vue";
     import HeaderContacts from "./HeaderContacts.vue";
-    import { navItemsCollection } from "../helpers/collections";
 
     export default {
         components: {
-            MobileMenu, NavItem, HeaderContacts
+            DesktopMenu, MobileMenu, NavItem, HeaderContacts
         },
-        data() {
-            return {
-                isActiveHero: true,
-                navItems: navItemsCollection
+        computed: {
+            isActiveHero() {
+                return this.$store.state.isActiveHero;
             }
         },
         created() {
-            this.isActiveHero = window.location.pathname === '/main';
-            console.log('created', this.navItems)
+            this.$store.commit('initializeActiveHero')
         },
         watch: {
             name: () => console.log('whoawhoa'),
@@ -68,13 +43,6 @@
                 console.log('this2', this);
             }
         },
-        methods: {
-            checkRadio: function (event) {
-                const label = event.target.parentNode;
-                label.click();
-                this.isActiveHero = label.dataset.link ? true : false;
-            }
-        }
     }
 </script>
 
@@ -86,8 +54,12 @@
         position: fixed;
         z-index: 10;
         border: 1px solid red;
-        background: #474343;
         transition: all .5s;
+        background: #000;
+    }
+
+    .heroHeader.head-wrapper {
+        background: #000;
     }
 
     .head-nav-wrapper {
@@ -99,7 +71,7 @@
             "logo logo"
             "menu menu"; */
         grid-template:
-            "menu logo contacts" 2fr / .5fr 1fr 1fr;
+            "menu logo contacts" 2fr / .5fr 1fr .5fr;
         align-items: center;
         /* grid-template-columns: 2fr 1fr;
         grid-template-rows: repeat(2, 1fr); */
@@ -139,20 +111,6 @@
 
     .heroHeader .head-nav-wrapper {
         flex-flow: column;
-    }
-
-    .nav-items {
-        padding: 0;
-        display: none;
-        list-style-type: none;
-    }
-
-    .nav-items li {
-        cursor: pointer;
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 10px;
-        font-size: 2.3vw;
     }
 
     /* .heroHeader {
