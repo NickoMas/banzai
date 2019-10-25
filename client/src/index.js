@@ -1,5 +1,6 @@
 import "@babel/polyfill";
 import Vue from 'vue';
+import Vuex from 'vuex'
 import VueRouter from 'vue-router';
 import VueScrollTo from 'vue-scrollto';
 import App from './App.vue';
@@ -22,17 +23,30 @@ const routes = [
   { path: '/calendar', component: Calendar }
 ];
 
-const router = new VueRouter({
-  mode: 'history',
-  routes
-});
-
 Vue.use(VueRouter);
+Vue.use(Vuex);
 Vue.use(VueScrollTo, {
   // container: '.main-wrapper',
   duration: 500,
   easing: "ease",
 });
+
+const store = new Vuex.Store({
+  state: {
+    isActiveHero: false
+  },
+  mutations: {
+    initializeActiveHero(state) {
+      state.isActiveHero = window.location.pathname === '/main'
+    },
+    updateActiveHero(state, payload) {
+      const { event } = payload;
+      const label = event.target.parentNode;
+      label.click();
+      state.isActiveHero = label.dataset.link ? true : false;
+    }
+  }
+})
 
 new Vue({
   data: {
@@ -41,7 +55,11 @@ new Vue({
   created: function() {
     console.log('this', this)
   },
-  router,
+  store,
+  router: new VueRouter({
+    mode: 'history',
+    routes
+  }),
   el: '#banzai',
   render: h => h(App)
 });
