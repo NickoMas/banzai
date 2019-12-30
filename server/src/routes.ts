@@ -21,7 +21,7 @@ class Routes {
         router.route('/')
             .get((req:Request, res:Response) => {
                 console.log('is hherer');
-                res.status(200).redirect('/main');
+                res.status(200).redirect('/hero');
             })
         
         // router.use(['/main', '/about', '/contacts'], express.static(path.join(process.cwd(), 'dist/client')))
