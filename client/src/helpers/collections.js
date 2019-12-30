@@ -1,5 +1,5 @@
 export const navItemsCollection = {
-    main: 'Main',
+    hero: 'Hero',
     about: 'About',
     contacts: 'Contacts',
     coaches: 'Coaches',

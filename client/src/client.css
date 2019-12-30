@@ -70,10 +70,15 @@ a:-webkit-any-link {
     color: #fff;
 }
 
+/** GLOBAL STYLES */
 
-
-*/
-/***/
+body {
+    /* overflow: hidden;
+    font-size: 16px; */
+    /* color: #fff; */
+    font-family: 'Play', sans-serif;
+    /* height: calc(100% + var(--nonhero-header-height__desktop) + var(--footer-height__desktop)) */
+}
 
 /** MOBILE STYLES */
 
@@ -86,37 +91,10 @@ a:-webkit-any-link {
     --main-bg-color: black;
     --main-mobile-bg-color: #141212;
     --hero-header-height: 80px;
-}
-
-body {
-    /* overflow: hidden;
-    font-size: 16px; */
-    /* color: #fff; */
-    font-family: 'Play', sans-serif;
-}
-
-.fullscreen-bg {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    z-index: -100;
-}
-
-.fullscreen-bg__video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: auto;
-    height: auto;
-    min-width: 100%;
-    min-height: 100%;
-    -webkit-transform: translate(-50%, -50%);
-       -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-	        transform: translate(-50%, -50%);
+    --header-height__mobile: 80px;
+    --nonhero-header-height__desktop: 100px;
+    --hero-header-height__desktop: 200px;
+    --footer-height__desktop: 100px;
 }
 
 .content-block {
@@ -131,10 +109,6 @@ body {
     font-size: 1.5rem;
     margin: 1rem 0;
     font-weight: 500;
-}
-
-video {
-    display: none;
 }
 
 .nav-item-label {
@@ -172,18 +146,17 @@ video {
 
     body {
         font-size: 32px;
+        /* height: calc(100% + var(--nonhero-header-height__desktop)); */
     }
     
-    .content-main__logo {
+    .content-main__logo,
+    .head-nav-menu__mobile,
+    .content-header {
         display: none;
     }
 
     .head-nav-menu {
         justify-content: center;
-    }
-
-    .head-nav-menu__mobile {
-        display: none;
     }
 
     video {
@@ -203,13 +176,14 @@ video {
     }
 
     .main-wrapper {
-        height: calc(100% - 100px);
-        bottom: 0;
-        top: unset;
+        /* height: calc(100% - 100px); */
+        /* bottom: 0; */
+        top: var(--nonhero-header-height__desktop);
     }
 
     .heroHeader ~ .main-wrapper {
-        height: calc(100% - var(--hero-header-height));
+        top: var(--hero-header-height__desktop);
+        /* height: calc(100% - var(--hero-header-height)); */
     }
 
     .head-wrapper:not(.heroHeader) .head-nav-wrapper {
@@ -238,10 +212,6 @@ video {
         background-color: var(--main-bg-color);
         justify-content: center;
         height: 100%;
-    }
-
-    .content-header {
-        display: none;
     }
 
     .content-coaches__wrapper {

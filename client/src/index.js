@@ -4,19 +4,20 @@ import Vuex from 'vuex'
 import VueRouter from 'vue-router';
 import VueScrollTo from 'vue-scrollto';
 import App from './App.vue';
-import Main from './pages/Main.vue';
+import Hero from './pages/Hero.vue';
 import About from './pages/About.vue';
 import Contacts from './pages/Contacts.vue';
 import Coaches from './pages/Coaches.vue';
 import Calendar from "./pages/Calendar.vue";
 import { navItemsCollection } from "./helpers/collections";
+import * as assets from "./assets";
 import './client.css';
 
 // const Foo = { template: '<div>foo</div>' };
 // const Bar = { template: '<div>bar</div>' };
 
 const routes = [
-  { path: '/main', component: Main },
+  { path: '/hero', component: Hero },
   { path: '/about', component: About },
   { path: '/contacts', component: Contacts },
   { path: '/coaches', component: Coaches },
@@ -27,7 +28,7 @@ Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(VueScrollTo, {
   // container: '.main-wrapper',
-  duration: 500,
+  duration: 300,
   easing: "ease",
 });
 
@@ -37,7 +38,7 @@ const store = new Vuex.Store({
   },
   mutations: {
     initializeActiveHero(state) {
-      state.isActiveHero = window.location.pathname === '/main'
+      state.isActiveHero = window.location.pathname === '/hero'
     },
     updateActiveHero(state, payload) {
       const { event } = payload;
