@@ -1,16 +1,16 @@
 <template>
-    <main class="main-wrapper">
+    <main class="main-wrapper" ref="main">
         <!-- <section class="content-block content-main bg-video-wrapper active-block" id="main"> -->
             <!-- <video src="./promo.mp4" preload="auto" autoplay="autoplay" loop="loop" muted="muted"></video> -->
-            <!-- <img class="content-main__logo" src="./banzai_club_logo.jpg" title="banzai club logo"> -->
+        <!-- <img class="content-main__logo" src="images/banzai_club_logo.jpg" title="banzai club logo"> -->
         <!-- </section> -->
         <section class="content-section mobile-content" v-if="isMobile">
-            <Main></Main>
+            <Hero></Hero>
             <About></About>
             <Contacts></Contacts>
             <Coaches></Coaches>
             <Calendar></Calendar>
-            <Footer></Footer>
+            <!-- <Footer></Footer> -->
         </section>
         <section class="content-section desktop-content" v-else>
             <transition name="banzai" mode="out-in">
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-    import Main from '../pages/Main.vue';
+    import Hero from '../pages/Hero.vue';
     import About from '../pages/About.vue';
     import Contacts from '../pages/Contacts.vue';
     import Coaches from '../pages/Coaches.vue';
@@ -32,7 +32,7 @@
 
     export default {
         components: {
-            Main, About, Contacts, Coaches, Calendar, Footer
+            Hero, About, Contacts, Coaches, Calendar, Footer
         },
         // created() {
         //     console.log('mobile', this.isMobile)
@@ -47,7 +47,7 @@
                 console.log('ha', a, b);
                 this.$emit('metal', 3);
             }
-        }
+        },
     }
 </script>
 
@@ -58,11 +58,8 @@
         /* background: var(--main-bg-color); */
     }
     .main-wrapper {
-        /* height: calc(100% - var(--hero-header-height)); */
-        height: auto;
-        top: 80px;
-        position: absolute;
-        /* bottom: 0; */
+        top: var(--header-height__mobile);
+        position: relative;
         width: 100%;
     }
     .content-section {

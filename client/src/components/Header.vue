@@ -3,7 +3,7 @@
         <nav class="head-nav-wrapper">
             <!-- <input type="checkbox" id="menu-toggle" hidden> -->
             <div class="head-nav-brand head-nav-blocks">
-                <a class="head-nav-brand-link" href="/main">
+                <a class="head-nav-brand-link" href="/hero">
                     <!-- <img src="./banzai_logo_min.jpg" alt="banzai_logo" height="65"> -->
                     <span class="head-nav-brand-link__name">Iaznab</span>
                 </a>

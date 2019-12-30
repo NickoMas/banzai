@@ -120,7 +120,7 @@
 
     #mobile-menu li {
         padding: 10px 0;
-        transition-delay: 2s;
+        transition-delay: 1s;
     }
 
     .head-nav-menu__mobile input:checked ~ #mobile-menu {

@@ -17,15 +17,13 @@ setupCalendar({
   locale: 'rus'
 });
 
-console.log('call')
-
 export default {
     components: {
         'v-calendar': Calendar
     },
     data() {
         return {
-            selectedValue: new Date(),
+            selectedValue: new Date(2019, 11, 12),
             attrs: [
                 {
                 key: 'today',
@@ -33,7 +31,7 @@ export default {
                     backgroundColor: '#ff8080',
                     // Other properties are available too, like `height` & `borderRadius`
                 },
-                dates: new Date(2018, 0, 1)
+                dates: new Date(),
                 }
             ],
         };
@@ -46,3 +44,9 @@ export default {
 }
 
 </script>
+
+<style>
+    .c-title { /** used only here */
+        text-transform: capitalize;
+    }
+</style>

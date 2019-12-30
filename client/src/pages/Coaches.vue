@@ -6,6 +6,7 @@
                 <!-- <img class="content-block__avatar" src="./coaches_kir.jpg" alt="Раханский Кирилл Степанович"> -->
                 <figcaption class="content-coaches__text">
                     <!-- Раханский Кирилл Степанович -->
+                    <div class="image"></div>
                     loremasdfasdfasdfasdfa afsdf asdf
                 </figcaption>    
             </figure>
@@ -13,7 +14,10 @@
                 <!-- <img class="content-block__avatar" src="./coaches_eug.jpg" alt="Омельянчук Евгений Александрович"> -->
                 <figcaption class="content-coaches__text">
                     <!-- Омельянчук Евгений Александрович -->
-                    loremasdfasdfasdfasdfa afsdf asdf
+                    <div class="image">
+                        <!-- <img class="slide image" src="images/coaches_kir.jpg"/> -->
+                    </div>
+                    <p>loremasdfasdfasdfasdfa afsdf asdf</p>
                 </figcaption>
             </figure>
         </article>        
@@ -21,6 +25,13 @@
 </template>
 
 <style>
+    .image {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        background: #fff;
+        margin: auto;
+    }
 
     .content-coaches {
         height: 100%;
