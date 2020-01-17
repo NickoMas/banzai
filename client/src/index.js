@@ -29,7 +29,7 @@ Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(VueScrollTo, {
   // container: '.main-wrapper',
-  duration: 300,
+  duration: 700,
   easing: "ease",
 });
 Vue.use(VCalendar, {

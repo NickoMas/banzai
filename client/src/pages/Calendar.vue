@@ -13,6 +13,7 @@
 </template>
 
 <script>
+// import { DatePicker } from 'v-calendar';
 
 export default {
     // components: {
@@ -23,12 +24,32 @@ export default {
             selectedValue: new Date(2019, 11, 12),
             attrs: [
                 {
-                    // isDark: true,
                     key: 'today',
+                    highlight: 'blue',
+                    dates: [
+                        new Date()
+                    ]
+                },
+                {
+                    popover: {
+                        positionFixed: true,
+                        label: 'Drezden open 2020'
+                    },
                     highlight: true,
                     dates: [
-                        new Date(),
-                        { start: new Date(2020, 0, 15), span: 5 } // # of days
+                        { start: new Date(2020, 0, 18), span: 3 } // # of days
+                    ]
+                },
+                {
+                    popover: {
+                        visibility: 'click',
+                        label: 'День рождения: Пупкин И.'
+                    },
+                    dot: {
+                        color: 'green',
+                    },
+                    dates: [
+                        new Date(2020, 0, 5),
                     ],
                 }
             ],
