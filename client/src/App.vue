@@ -1,5 +1,5 @@
 <template>
-  <div class="banzai-wrapper">
+  <div class="banzai-wrapper" v-bind:class="{ isActiveHero }">
     <!-- <img src="images/banzai_logo_min.jpg" alt="banzai_logo" height="65"> -->
     <Header></Header>
     <Content></Content>
@@ -17,8 +17,8 @@
       Header, Content, Footer
     },        
     computed: {
-      isNotActiveHero() {
-        return !this.$store.state.isActiveHero;
+      isActiveHero() {
+        return this.$store.state.isActiveHero;
       }
     },
   }
@@ -29,5 +29,13 @@
     min-height: 100vh;
     position: relative;
     overflow: auto;
+    background-color: black;
   }
+
+  @media screen and (min-width: 768px) {
+    .banzai-wrapper.isActiveHero {
+      background-color: unset;
+    }    
+  }
+
 </style>

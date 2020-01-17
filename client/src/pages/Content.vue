@@ -7,9 +7,9 @@
         <section class="content-section mobile-content" v-if="isMobile">
             <Hero></Hero>
             <About></About>
-            <Contacts></Contacts>
             <Coaches></Coaches>
             <Calendar></Calendar>
+            <Contacts></Contacts>
             <!-- <Footer></Footer> -->
         </section>
         <section class="content-section desktop-content" v-else>
@@ -54,16 +54,20 @@
 <style>
     main {
         position: relative;
-        height: 100%;
+        min-height: calc(100vh - var(--nonhero-header-height__desktop));
         /* background: var(--main-bg-color); */
     }
     .main-wrapper {
         top: var(--header-height__mobile);
         position: relative;
         width: 100%;
-    }
+        display: flex;
+        place-content: center;
+}
     .content-section {
         height: auto;
+        margin: auto;
+        width: 100%;
     }
     .content-main {
         display: flex;

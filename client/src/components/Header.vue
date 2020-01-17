@@ -3,9 +3,10 @@
         <nav class="head-nav-wrapper">
             <!-- <input type="checkbox" id="menu-toggle" hidden> -->
             <div class="head-nav-brand head-nav-blocks">
-                <a class="head-nav-brand-link" href="/hero">
-                    <!-- <img src="./banzai_logo_min.jpg" alt="banzai_logo" height="65"> -->
-                    <span class="head-nav-brand-link__name">Iaznab</span>
+                <a class="head-nav-brand-link" v-bind:class="{ heroHeader: isActiveHero }" href="/hero">
+                    <img class="head-nav-brand-link__mobile" src="images/banzai_club_logo.jpg" alt="banzai_logo" height="80">
+                    <img class="head-nav-brand-link__desktop" src="images/banzai_logo_min.jpg" alt="banzai_logo" height="80">
+                    <!-- <span class="head-nav-brand-link__name">Iaznab</span> -->
                 </a>
             </div>
             <div class="head-nav-menu head-nav-blocks">
@@ -53,7 +54,7 @@
         height: 5rem;
         position: fixed;
         z-index: 10;
-        border: 1px solid red;
+        /* border: 1px solid red; */
         transition: all .5s;
         background: #000;
     }
@@ -63,6 +64,7 @@
     }
 
     .head-nav-wrapper {
+        /* visibility: hidden; */
         height: 100%;
         display: grid;
         /* grid-template-columns: repeat(2, 1fr);
@@ -71,7 +73,7 @@
             "logo logo"
             "menu menu"; */
         grid-template:
-            "menu logo contacts" 2fr / .5fr 1fr .5fr;
+            "menu logo contacts" 2fr / .5fr 1fr minmax(0, 0.5fr);
         align-items: center;
         /* grid-template-columns: 2fr 1fr;
         grid-template-rows: repeat(2, 1fr); */
@@ -88,6 +90,10 @@
         grid-row: 1; 
         grid-area: logo;
         justify-self: center;
+    }
+
+    .head-nav-brand-link__desktop {
+        display: none;
     }
 
     .head-nav-brand-link__name {

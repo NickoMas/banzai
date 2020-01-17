@@ -1,13 +1,20 @@
 <template>
     <section class="content-block content-hero" id="hero">
         <agile :options="heroCarousel">
-            <!-- <img class="slide" src="images/coaches_eug.jpg"/>
-            <img class="slide" src="images/coaches_kir.jpg"/> -->
+            <!-- <img class="slide" src="images/coaches_eug.jpg"> -->
+            <img class="slide" src="images/gallery-1.jpeg">
+            <img class="slide" src="images/gallery-2.jpeg">
+            <img class="slide" src="images/gallery-3.jpeg">
+            <img class="slide" src="images/eug-1.jpeg">
+            <!-- <img class="slide" src="images/coaches_kir.jpg"/> -->
             <!-- <img class="slide" src="images/banzai_logo.png"/> -->
-            <div class="slide metal"></div>
+            <!-- <div class="slide metal"></div> -->
+            <!-- <template slot="prevButton">prev</template>
+            <template slot="nextButton">next</template> -->
         </agile>
         <div class="fullscreen-bg">
-            <video class="fullscreen-bg__video" src="videos/promo.mp4" autoplay="autoplay" preload="auto" loop="loop" muted="muted"></video>
+            <!-- <video class="fullscreen-bg__video" src="videos/promo.mp4" autoplay="autoplay" preload="auto" loop="loop" muted="muted"></video> -->
+            <video class="fullscreen-bg__video" src="videos/banzai-2.mp4" autoplay="autoplay" preload="auto" loop="loop" muted="muted"></video>
         </div>
     </section>
 </template>
@@ -20,7 +27,8 @@ export default {
         return {
             heroCarousel: {
                 dots: false,
-                autoplay: false,
+                navButtons: false,
+                autoplay: true,
                 autoplaySpeed: 2000,
                 fade: true,
                 speed: 1000,
@@ -28,7 +36,6 @@ export default {
                     {
                         breakpoint: 800,
                         settings: {
-                            dots: true,
                             unagile: true
                         }
                     }
@@ -63,7 +70,15 @@ export default {
     }
 
     .agile__track { 
-        height: calc(100vh - 80px - 18px);
+        /* height: calc(100vh - 80px - 18px); */
+    }
+
+    .agile__actions {
+        background-color: #fff;
+    }
+
+    #hero.content-hero {
+        padding: 0;
     }
     
     @media screen and (min-width: 800px) {

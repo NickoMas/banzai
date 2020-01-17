@@ -12,15 +12,21 @@
             <li
                 v-for="(value, name, index) in navItems"
                 :key="index">
-                <a
+                <router-link
                     class="nav-item-link"
                     v-scroll-to="{
                         el: `#${name === 'main' ? 'hero' : name}`,
-                        onDone: checkInput
+                        onDone: checkInput.bind(this, name)
                     }"
+                    :to="name">
+                    {{ value }}
+                </router-link>
+                <!-- <a
+                    class="nav-item-link"
+                    
                 >
                     {{ value }}
-                </a>
+                </a> -->
             </li>
         </ul>
     </div>
@@ -37,9 +43,12 @@
         },
         methods: {
             checkInput: function ($event) {
-                console.log('check', this.checkedInput);
+                console.log('check', $event);
                 this.checkedInput = !this.checkedInput;
             },
+            reroute: function(url) {
+
+            }
         }
     }
 </script>
@@ -57,13 +66,14 @@
 
     .head-nav-menu__mobile > input {
         display: flex;
-        width: 40px;
+        width: 45px;
         height: 32px;
         position: absolute;
         cursor: pointer;
         opacity: 0;
         z-index: 2;
-        top: 0;
+        top: -14px;
+        left: -12px;
     }
 
     .head-nav-menu__mobile span {
@@ -92,7 +102,7 @@
     .head-nav-menu__mobile input:checked ~ span {
         opacity: 1;
         transform: rotate(45deg) translate(-3px, -1px);
-        background: #36383F;
+        background: #c72727;
     }
     .head-nav-menu__mobile input:checked ~ span:nth-last-child(3) {
         opacity: 0;
@@ -105,12 +115,13 @@
 
     #mobile-menu {
         position: absolute;
-        width: 50vw;
-        height: 360px;
+        width: 49vw;
+        min-height: 200px;
         box-shadow: 0 0 10px #85888C;
         margin-top: -70px;
+        margin-left: 13px;
         padding: 100px;
-        background-color: #2e2f31;
+        background-color: #000;
         -webkit-font-smoothing: antialiased;
         transform: translate(-45px, -100%);
         transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);

@@ -1,37 +1,35 @@
 <template>
     <section class="content-block content-calendar" id="calendar">
-        <h2 class="content-header">Calendar</h2>
-        <v-calendar
+        <!-- <h2 class="content-header">Calendar</h2> -->
+        <h2 class="content-header">Календарь</h2>
+        <vc-calendar
+            is-dark
             is-expanded
+            color="orange"
+            locale="rus"
             :attributes='attrs'>
-        </v-calendar>    
+        </vc-calendar>    
     </section>
 </template>
 
 <script>
-import { setupCalendar, Calendar} from 'v-calendar'
-import 'v-calendar/lib/v-calendar.min.css';
-
-setupCalendar({
-  firstDayOfWeek: 2,
-  locale: 'rus'
-});
 
 export default {
-    components: {
-        'v-calendar': Calendar
-    },
+    // components: {
+    //     'v-calendar': VCalendar
+    // },
     data() {
         return {
             selectedValue: new Date(2019, 11, 12),
             attrs: [
                 {
-                key: 'today',
-                highlight: {
-                    backgroundColor: '#ff8080',
-                    // Other properties are available too, like `height` & `borderRadius`
-                },
-                dates: new Date(),
+                    // isDark: true,
+                    key: 'today',
+                    highlight: true,
+                    dates: [
+                        new Date(),
+                        { start: new Date(2020, 0, 15), span: 5 } // # of days
+                    ],
                 }
             ],
         };
@@ -46,7 +44,12 @@ export default {
 </script>
 
 <style>
-    .c-title { /** used only here */
+    .vc-title { /** used only here */
         text-transform: capitalize;
+    }
+
+    .c-pane-container.is-expanded {
+        background-color: unset !important;
+        color: #ffffff;
     }
 </style>

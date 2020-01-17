@@ -46,6 +46,7 @@
         padding: 0;
         display: none;
         list-style-type: none;
+        flex-flow: row wrap;
     }
 
     .head-nav-menu__desktop li {
@@ -53,6 +54,7 @@
         color: #fff;
         padding: 10px 20px;
         border-radius: 10px;
-        font-size: 2.3vw;
+        font-size: 1.5vw;
+        white-space: nowrap;
     }
 </style>
