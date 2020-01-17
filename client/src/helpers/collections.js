@@ -1,7 +1,14 @@
 export const navItemsCollection = {
-    hero: 'Hero',
-    about: 'About',
-    contacts: 'Contacts',
-    coaches: 'Coaches',
-    calendar: 'Calendar'
+    hero: 'Главная',
+    about: 'О нас',
+    coaches: 'Тренеры',
+    calendar: 'Календарь',
+    contacts: 'Контакты'
 };
+// export const navItemsCollection = {
+//     hero: 'Hero',
+//     about: 'About',
+//     coaches: 'Coaches',
+//     calendar: 'Calendar',
+//     contacts: 'Contacts'
+// };

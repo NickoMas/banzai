@@ -3,6 +3,7 @@ import Vue from 'vue';
 import Vuex from 'vuex'
 import VueRouter from 'vue-router';
 import VueScrollTo from 'vue-scrollto';
+import VCalendar, { setupCalendar} from 'v-calendar'
 import App from './App.vue';
 import Hero from './pages/Hero.vue';
 import About from './pages/About.vue';
@@ -31,6 +32,14 @@ Vue.use(VueScrollTo, {
   duration: 300,
   easing: "ease",
 });
+Vue.use(VCalendar, {
+  componentPrefix: 'vc',  // Use <vc-calendar /> instead of <v-calendar />
+});
+
+setupCalendar({
+  locale: 'rus', // TODO: store in separate file
+});
+  
 
 const store = new Vuex.Store({
   state: {
