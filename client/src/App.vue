@@ -4,38 +4,39 @@
     <Header></Header>
     <Content></Content>
     <!-- <Footer v-if="isNotActiveHero"></Footer> -->
-  </div>  
+  </div>
 </template>
 
 <script>
-  import Header from "./components/Header.vue";
-  import Content from "./pages/Content.vue";
-  import Footer from "./components/Footer.vue";
+import Header from "./components/Header.vue";
+import Content from "./pages/Content.vue";
+import Footer from "./components/Footer.vue";
 
-  export default {
-    components: {
-      Header, Content, Footer
-    },        
-    computed: {
-      isActiveHero() {
-        return this.$store.state.isActiveHero;
-      }
-    },
+export default {
+  components: {
+    Header,
+    Content,
+    Footer
+  },
+  computed: {
+    isActiveHero() {
+      return this.$store.state.isActiveHero;
+    }
   }
+};
 </script>
 
 <style scoped>
-  .banzai-wrapper {
-    min-height: 100vh;
-    position: relative;
-    overflow: auto;
-    background-color: black;
-  }
+.banzai-wrapper {
+  min-height: 100vh;
+  position: relative;
+  overflow: auto;
+  background-color: black;
+}
 
-  @media screen and (min-width: 768px) {
-    .banzai-wrapper.isActiveHero {
-      background-color: unset;
-    }    
+@media screen and (min-width: 768px) {
+  .banzai-wrapper.isActiveHero {
+    background-color: unset;
   }
-
+}
 </style>

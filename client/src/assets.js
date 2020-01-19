@@ -11,3 +11,4 @@ import './images/kir-1.jpeg';
 import './images/kir-2.jpeg';
 import './images/eug-1.jpeg';
 import './images/eug-2.jpeg';
+import './images/fav.png';
