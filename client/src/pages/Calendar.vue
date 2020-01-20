@@ -43,13 +43,14 @@ export default {
                 {
                     popover: {
                         visibility: 'click',
-                        label: 'День рождения: Пупкин И.'
+                        label: 'День рождения: Иванов И.',
+                        // placement: 'top-end',
                     },
                     dot: {
                         color: 'green',
                     },
                     dates: [
-                        new Date(2020, 0, 5),
+                        new Date(2020, 0, 6),
                     ],
                 }
             ],

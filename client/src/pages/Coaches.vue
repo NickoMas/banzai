@@ -6,7 +6,7 @@
       <figure class="content-coaches__coach content-coaches__kir">
         <!-- <img class="content-block__avatar" src="images/coaches_kir.jpg" alt="Раханский Кирилл Степанович"> -->
         <div class="avatars-container">
-          <img
+          <!-- <img
             class="content-block__avatar content-block__avatar--shown"
             src="images/kir-1.jpeg"
             alt="Раханский Кирилл Степанович"
@@ -14,6 +14,11 @@
           <img
             class="content-block__avatar content-block__avatar--hidden"
             src="images/kir-2.jpeg"
+            alt="Раханский Кирилл Степанович"
+          /> -->
+          <img
+            class="content-block__avatar content-block__avatar--shown"
+            src="images/kir-3.jpeg"
             alt="Раханский Кирилл Степанович"
           />
         </div>
@@ -65,6 +70,13 @@
   padding-left: 10px;
   padding-top: 10px;
   text-align: center;
+  max-width: 40%;
+}
+
+@media screen and (min-width: 768px) {
+  .content-coaches__text {
+    max-width: 50%;
+  }
 }
 
 .content-coaches__text .image {

@@ -39,6 +39,7 @@ export default {
         autoplaySpeed: 2000,
         fade: true,
         speed: 1000,
+        pauseOnHover: true,
         responsive: [
           {
             breakpoint: 800,

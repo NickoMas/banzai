@@ -1,6 +1,12 @@
 <template>
     <div class="head-nav-contacts head-nav-blocks">
         <!-- <div class="head-nav-contacts__line phone">+31412345252345</div> -->
+        <a class="head-nav-brand-link" href="/hero">
+            <!-- <img class="head-nav-brand-link__mobile" src="images/banzai_club_logo.jpg" alt="banzai_logo" height="80">
+            <img class="head-nav-brand-link__desktop" src="images/banzai_logo_min.jpg" alt="banzai_logo" height="80"> -->
+            <img v-if="isActiveHero && isDesktop" class="head-nav-brand-link__desktop--hor" src="images/banzai_logo_hor.png" alt="banzai_logo" height="40">
+            <!-- <span class="head-nav-brand-link__name">Iaznab</span> -->
+        </a>
         <a class="head-nav-contacts__line phone" href="tel:+375(29)6414870">+375(29)6414870</a>
         <ul class="head-nav-contacts__line social">
             <li class="social-icon">
@@ -20,9 +26,30 @@
 </template>
 
 <script>
+import { breakpoints } from '../helpers/constants';
+
+export default {
+    computed: {
+        isActiveHero() {
+            return this.$store.state.isActiveHero;
+        },
+        isDesktop() {
+            return window.innerWidth > breakpoints.mobile
+        }
+    },
+}
+
 </script>
 
 <style scoped>
+    .head-nav-brand-link__desktop--hor { 
+        display: none;
+    }
+    
+    .hor-head .head-nav-brand-link__desktop--hor {
+        display: block;
+    }
+
     .head-nav-contacts {
         color: #fff;
     }

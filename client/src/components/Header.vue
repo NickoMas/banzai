@@ -1,11 +1,12 @@
 <template>
-    <header class="head-wrapper" v-bind:class="{ heroHeader: isActiveHero }"> 
+    <header class="head-wrapper hor-head" v-bind:class="{ heroHeader: isActiveHero }"> 
         <nav class="head-nav-wrapper">
             <!-- <input type="checkbox" id="menu-toggle" hidden> -->
             <div class="head-nav-brand head-nav-blocks">
                 <a class="head-nav-brand-link" v-bind:class="{ heroHeader: isActiveHero }" href="/hero">
                     <img class="head-nav-brand-link__mobile" src="images/banzai_club_logo.jpg" alt="banzai_logo" height="80">
                     <img class="head-nav-brand-link__desktop" src="images/banzai_logo_min.jpg" alt="banzai_logo" height="80">
+                    <!-- <img class="head-nav-brand-link__desktop--hor" src="images/banzai_logo_hor.png" alt="banzai_logo" height="80"> -->
                     <!-- <span class="head-nav-brand-link__name">Iaznab</span> -->
                 </a>
             </div>
@@ -49,6 +50,10 @@
 
 
 <style>
+    .hor-head .head-nav-brand-link__mobile {
+        display: none;
+    }
+
     .head-wrapper {
         width: 100%;
         height: 5rem;
@@ -113,6 +118,10 @@
         grid-column: 3;
         grid-row: 1;
         grid-area: contacts;
+
+        display: flex;
+        flex-flow: column wrap;
+        place-items: center;
     }
 
     .heroHeader .head-nav-wrapper {
