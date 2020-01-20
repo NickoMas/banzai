@@ -30,10 +30,16 @@ Vue.use(Vuex);
 Vue.use(VueScrollTo, {
   // container: '.main-wrapper',
   duration: 700,
+  offset: -90,
   easing: "ease",
 });
 Vue.use(VCalendar, {
   componentPrefix: 'vc',  // Use <vc-calendar /> instead of <v-calendar />
+  screens: {
+    tablet: '576px',
+    laptop: '992px',
+    desktop: '1200px',
+  }
 });
 
 setupCalendar({

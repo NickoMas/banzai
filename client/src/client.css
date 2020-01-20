@@ -225,11 +225,18 @@ body {
     .head-nav-menu__desktop {
         display: inline-flex;
     }
-
+    
     .head-nav-wrapper {
         place-items: center;
         grid-template:
             "logo logo contacts" 1fr
+            "menu menu contacts" 1fr / 2fr 1fr;
+    }
+    
+    .hor-head .head-nav-wrapper {
+        place-items: center;
+        grid-template:
+            "menu menu contacts" 1fr
             "menu menu contacts" 1fr / 2fr 1fr;
     }
 
