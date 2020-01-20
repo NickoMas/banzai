@@ -1,6 +1,7 @@
 import './videos/promo.mp4';
 import './videos/banzai-2.mp4';
 import './images/banzai_logo_min.jpg';
+import './images/banzai_logo_hor.png';
 import './images/banzai_club_logo.jpg';
 import './images/coaches_kir.jpg';
 import './images/coaches_eug.jpg';
@@ -9,6 +10,9 @@ import './images/gallery-2.jpeg';
 import './images/gallery-3.jpeg';
 import './images/kir-1.jpeg';
 import './images/kir-2.jpeg';
+import './images/kir-3.jpeg';
 import './images/eug-1.jpeg';
 import './images/eug-2.jpeg';
-import './images/fav.png';
+import './images/apple-touch-icon.png';
+import './images/favicon-32x32.png';
+import './images/favicon-16x16.png';
