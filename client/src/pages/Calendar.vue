@@ -50,7 +50,7 @@ export default {
                         color: 'green',
                     },
                     dates: [
-                        new Date(2020, 0, 6),
+                        new Date(2020, 0, 9),
                     ],
                 }
             ],

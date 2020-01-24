@@ -1,5 +1,5 @@
 <template>
-    <header class="head-wrapper hor-head" v-bind:class="{ heroHeader: isActiveHero }"> 
+    <header class="head-wrapper " v-bind:class="{ heroHeader: isActiveHero, isMobile: isMobile }"> 
         <nav class="head-nav-wrapper">
             <!-- <input type="checkbox" id="menu-toggle" hidden> -->
             <div class="head-nav-brand head-nav-blocks">
@@ -27,6 +27,8 @@
     import NavItem from "./NavItem.vue";
     import HeaderContacts from "./HeaderContacts.vue";
 
+    import { breakpoints } from '../helpers/constants';
+
     export default {
         components: {
             DesktopMenu, MobileMenu, NavItem, HeaderContacts
@@ -34,6 +36,9 @@
         computed: {
             isActiveHero() {
                 return this.$store.state.isActiveHero;
+            },
+            isMobile() {
+                return window.innerWidth <= breakpoints.mobile
             }
         },
         created() {
@@ -50,7 +55,12 @@
 
 
 <style>
-    .hor-head .head-nav-brand-link__mobile {
+    .head-wrapper.heroHeader:not(.isMobile) .head-nav-brand-link__mobile {
+        display: inline;
+    }
+
+    .head-wrapper:not(.isMobile) .head-nav-brand-link__mobile,
+    .head-wrapper.hor-head:not(.isMobile) .head-nav-brand-link__mobile {
         display: none;
     }
 

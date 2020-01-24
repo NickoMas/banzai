@@ -153,9 +153,10 @@ body {
     
     .content-main__logo,
     .head-nav-menu__mobile,
-    .content-header,
-    .head-nav-brand-link:not(.heroHeader) .head-nav-brand-link__mobile {
+    .content-header
+    /* .head-nav-brand-link:not(.heroHeader) .head-nav-brand-link__mobile { */
     /* .head-nav-brand-link__mobile { */
+    {        
         display: none;
     }
 
