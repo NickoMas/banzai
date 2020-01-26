@@ -9,7 +9,7 @@
     "build-watch": "npx webpack --watch --config webpack.config.dev.js --env.production",
     "build-sync": "npx webpack --config webpack.config.dev.js --env.production",
     "dev:webpack": "npx webpack-dev-server --config webpack.config.dev.js --env.development",
-    "dev": "./build/server/server.js",
+    "dev": "node ./build/server/server.js",
     "prod": "node ./build/server/server.js",
     "ts": "npx tsc"
   },
