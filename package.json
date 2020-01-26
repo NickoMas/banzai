@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "yarn build-sync && yarn dev",
+    "build1": "yarn build-sync && yarn dev",
     "build-watch": "npx webpack --watch --config webpack.config.dev.js --env.production",
     "build-sync": "npx webpack --config webpack.config.dev.js --env.production",
     "dev:webpack": "npx webpack-dev-server --config webpack.config.dev.js --env.development",
-    "dev": "node ./build/server/server.js",
+    "build": "node ./build/server/server.js",
     "prod": "node ./build/server/server.js",
     "ts": "npx tsc"
   },
