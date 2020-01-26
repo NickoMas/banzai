@@ -1,0 +1,1 @@
+web: yarn build-sync && yarn dev
