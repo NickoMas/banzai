@@ -41,6 +41,11 @@
   </section>
 </template>
 <style>
+.head-nav-contacts__line.phone {
+  color: #fff;
+  text-decoration: none;
+}
+
 .content-contacts {
   justify-content: center;
 }

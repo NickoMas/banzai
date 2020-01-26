@@ -1,4 +1,4 @@
-import './videos/promo.mp4';
+// import './videos/promo.mp4';
 import './videos/banzai-2.mp4';
 import './images/banzai_logo_min.jpg';
 import './images/banzai_logo_hor.png';
@@ -14,5 +14,7 @@ import './images/kir-3.jpeg';
 import './images/eug-1.jpeg';
 import './images/eug-2.jpeg';
 import './images/apple-touch-icon.png';
+import './images/android-chrome-192x192.png';
+import './images/android-chrome-512x512.png';
 import './images/favicon-32x32.png';
 import './images/favicon-16x16.png';

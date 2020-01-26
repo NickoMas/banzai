@@ -7,7 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const glob = require('glob');
 
-const clientConfig = function(env, args) {
+const clientConfig = function (env, args) {
   return {
     mode: env.production ? 'production' : 'development',
     entry: {
@@ -24,7 +24,7 @@ const clientConfig = function(env, args) {
                 name: './client/images/[name].[ext]'
               }
             }
-          ]  
+          ]
         },
         {
           test: /\.(mp4)$/i,
@@ -35,7 +35,7 @@ const clientConfig = function(env, args) {
                 name: './client/videos/[name].[ext]'
               }
             }
-          ]  
+          ]
         },
         {
           test: /\.vue$/,
@@ -53,6 +53,17 @@ const clientConfig = function(env, args) {
             'css-loader'
           ]
         },
+        // {
+        //   test: /^site\.webmanifest$/i,
+        //   use: [
+        //     {
+        //       loader: 'file-loader',
+        //       options: {
+        //         name: './client/heck.js'
+        //       }
+        //     }
+        //   ]
+        // }
         // {
         //   test: /\.html$/,
         //   use: [{
@@ -86,11 +97,11 @@ const clientConfig = function(env, args) {
       new MiniCssExtractPlugin({
         filename: `${env.production ? 'client/' : ''}client.css`,
         chunkFilename: '[id].css'
-      }),      
+      }),
 
     ],
     resolve: {
-      extensions: [ '.vue', '.js' ]
+      extensions: ['.vue', '.js']
     },
     output: {
       filename: '[name].js',
@@ -121,11 +132,11 @@ const serverConfig = function (env, args) {
       ]
     },
     resolve: {
-      extensions: [ '.ts', '.js']
+      extensions: ['.ts', '.js']
     }
   }
 };
 
 
-module.exports = [ clientConfig, serverConfig ];
+module.exports = [clientConfig, serverConfig];
 // module.exports = [ serverConfig ];

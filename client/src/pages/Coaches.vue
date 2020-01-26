@@ -15,7 +15,7 @@
             class="content-block__avatar content-block__avatar--hidden"
             src="images/kir-2.jpeg"
             alt="Раханский Кирилл Степанович"
-          /> -->
+          />-->
           <img
             class="content-block__avatar content-block__avatar--shown"
             src="images/kir-3.jpeg"
@@ -75,7 +75,7 @@
 
 @media screen and (min-width: 768px) {
   .content-coaches__text {
-    max-width: 50%;
+    max-width: 40%;
   }
 }
 
@@ -126,7 +126,9 @@
   opacity: 1;
 }
 
-.avatars-container:hover .content-block__avatar--shown {
+figure:not(.content-coaches__kir)
+  .avatars-container:hover
+  .content-block__avatar--shown {
   opacity: 0;
 }
 

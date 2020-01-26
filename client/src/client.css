@@ -49,11 +49,6 @@ table {
 	border-spacing: 0;
 }
 
-a:-webkit-any-link {
-    color: unset;
-    text-decoration: unset;
-}
-
 /****/
 /* STYLES to reuse */
 /*
@@ -118,7 +113,8 @@ body {
 
 .nav-item-link {
     /* border: 1px solid; */
-    color: red;
+    color: unset;
+    text-decoration: unset;
     display: inline-block;
     width: 50%;
     height: 20px;
@@ -126,6 +122,12 @@ body {
     font-size: 1.5em;
     /* z-index: 1; */
 }
+
+a:-webkit-any-link, a, a.nav-item-link {
+    color: unset;
+    text-decoration: unset;
+}
+
 
 /* .nav-item-link + input { */
 .nav-item-label input {
@@ -196,6 +198,10 @@ body {
             "logo menu contacts" 100px / .5fr minmax(0, 4fr) 1fr;
     }
 
+    .nav-item-link, .head-nav-contacts__line, .head-nav-contacts__line a {
+        text-shadow: 0px 0px 10px red;
+    }
+
     .content-block:not(.content-main) {
         /* padding: 0 100px;
         background: url(./backgr-1.jpg) 0px 100% no-repeat; */
@@ -243,6 +249,11 @@ body {
 
     .head-nav-wrapper:hover {
         background: var(--main-bg-color);
+    }
+
+    .a {
+        color: unset !important;
+        text-decoration: unset !important;
     }
 
     .content-block__avatar {
