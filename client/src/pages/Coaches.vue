@@ -102,14 +102,14 @@
 }
 
 .content-block__avatar {
-  height: auto;
+  /* height: auto; */
   width: 100%;
   /* box-shadow: 0 0 7px 0px red; */
   position: relative;
   /* border-radius: 50%; */
 
   width: 50%;
-  /* height: 100%; */
+  height: 100%;
   transition: all 0.3s ease-in-out;
 }
 
